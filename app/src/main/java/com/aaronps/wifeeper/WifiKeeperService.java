@@ -21,7 +21,7 @@ public class WifiKeeperService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        final String command = intent.getStringExtra("command");
+        final String command = (intent != null) ? intent.getStringExtra("command") : null;
 
         if (command == null)
         {
